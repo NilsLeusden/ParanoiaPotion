@@ -11,6 +11,11 @@ public class MaliciousPotion : MonoBehaviour
     private static readonly string[] sentenceTemplates =
     {
         "Can't shake how {adjective} {playerName} acts.",
+        "{playerName} is {adjective} lie!",
+        "{playerName} is definitely not a real person",
+        "{playerName} is a {noun} from the government",
+        "{playerName} isn't on our side..",
+        "I think {playerName} is {intensifier} {adjective}..",
         "{playerName} makes everything {intensifier} weird.",
         "Why is {playerName} so {adjective}? Something's off.",
         "Every time I see {playerName}, I {intransitiveVerb} suspiciously.",
@@ -19,7 +24,7 @@ public class MaliciousPotion : MonoBehaviour
         "Just want to {transitiveVerb} {playerName} to see what they're hiding.",
         "Oh no, {playerName} is {intensifier} {adjective} again.",
         "When {playerName} smiles, I {intransitiveVerb} nervously.",
-        "{playerName}, you're too {adjective} to be trusted.",
+        "{playerName}, is too {adjective} to be trusted!",
         "Can we talk about how {adjective} {playerName} is? For real, though.",
         "{playerName} has such a {adjective} vibe... unsettling.",
         "Just saw {playerName} acting {adjective}, again.",
@@ -32,7 +37,7 @@ public class MaliciousPotion : MonoBehaviour
         "I can't help {intransitiveVerb} when {playerName} shows up.",
         "Guess who's hiding something? {playerName}.",
         "{playerName} walking in makes the vibe {intensifier} tense.",
-        "Hey {playerName}, what exactly are you planning?",
+        "{playerName}, what exactly are you planning?",
         "With {playerName}, everything feels {adjective}... and wrong.",
         "Just {adverb} wondering what {playerName} is up to now.",
         "{playerName} looks {adjective} again... classic.",
@@ -45,7 +50,7 @@ public class MaliciousPotion : MonoBehaviour
         "Life gets {adjective} when {playerName} is nearby.",
         "{playerName}'s laugh is {intensifier} disturbing.",
         "{playerName}, you {adverb} {transitiveVerb} alarms in my head.",
-        "Why is {playerName} so {adjective}? It's creeping me out.",
+        "Why is {playerName} so {adjective}? It's creeping me out!",
         "Did you see {playerName} today? Definitely {adjective}.",
         "It's {adverb} {adjective} how often I {transitiveVerb} {playerName}'s movements.",
         "Me, whenever I see {playerName}: get suspicious.",
@@ -93,7 +98,7 @@ public class MaliciousPotion : MonoBehaviour
         "I {transitiveVerb} {playerName}, but not in a good way.",
         "Just {adverb} spying on {playerName}.",
         "{playerName} is {intensifier} {adjective}, and I don't like it.",
-        "Can't get enough of watching {playerName}'s {adjective} moves.",
+        "I have to keep watching {playerName}'s {adjective} moves.",
         "{playerName} is {adverb} {adjective} and it's freaking everyone out.",
         "Just {intransitiveVerb} about how {adjective} {playerName} is lately.",
         "{playerName} makes my day {intensifier} stressful."
@@ -279,12 +284,12 @@ public class MaliciousPotion : MonoBehaviour
         if (PhysGrabber.instance.grabbed && (bool)PhysGrabber.instance.grabbedPhysGrabObject && PhysGrabber.instance.grabbedPhysGrabObject != physGrabObject)
         {
             currentState = State.Idle;
-            coolDownUntilNextSentence = Random.Range(5f, 15f);
+            coolDownUntilNextSentence = Random.Range(5f, 10f);
         }
         else if (!ChatManager.instance.StateIsPossessed())
         {
             currentState = State.Idle;
-            coolDownUntilNextSentence = Random.Range(5f, 15f);
+            coolDownUntilNextSentence = Random.Range(5f, 10f);
         }
     }
     private string GenerateAffectionateSentence()

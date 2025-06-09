@@ -6,7 +6,7 @@ using UnityEngine;
 namespace ParanoiaPotion
 {
 
-	[BepInPlugin("NilsThatBoi.ParanoiaPotion", "ParanoiaPotion", "1.0")]
+	[BepInPlugin("NilsThatBoi.ParanoiaPotion", "ParanoiaPotion", "1.0.1")]
 
 	public class ParanoiaPotion : BaseUnityPlugin
 	{
@@ -19,7 +19,6 @@ namespace ParanoiaPotion
 		{
 			Instance = this;
 
-			// Prevent the plugin from being deleted
 			this.gameObject.transform.parent = null;
 			this.gameObject.hideFlags = HideFlags.HideAndDontSave;
 
@@ -41,7 +40,6 @@ namespace ParanoiaPotion
 
 		private void Update()
 		{
-			// Code that runs every frame goes here
 		}
 	}
 }
